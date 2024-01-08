@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title %}Credit Card Utilization{% endblock %}
+{% block content %}
+    <div class="container py-5 col-sm-12">
+		<h1 class="text-light">My Payment Plan: {{ details[0] }}</h1>
+        <br>
+            <div class="container border py-3 col">
+                <h3 class="text-light">Overview</h3>
+                <div class="row">
+                    <strong class="text-light col-sm-6">Card Limit:</strong>
+                    <p class="text-light col-sm-6">{{ details[1] }}</p>
+                </div>
+                <div class="row">
+                    <strong class="text-light col-sm-6">Card Balance:</strong>
+                    <p class="text-light col-sm-6">{{ details[2] }}</p>
+                </div>
+                <div class="row">
+                    <strong class="text-light col-sm-6">Card Interest Rate:</strong>
+                    <p class="text-light col-sm-6">{{ details[3] }}%</p>
+                </div>
+            </div>
+        <br>
+            <div class="container border py-3 col">
+                <h3 class="text-light">Plan</h3>
+                <div class="row">
+                    <strong class="text-light col-sm-6">Utilization:</strong>
+                    <p class="text-light col-sm-6">{{ plan[0] }}% </p>
+                </div>
+                <div class="row">
+                    <strong class="text-light col-sm-6">Current Interest:</strong>
+                    <p class="text-light col-sm-6">{{ plan[1] }}</p>
+                </div>
+                <div class="row">
+                    <strong class="text-light col-sm-6">Current Goal:</strong>
+                    <p class="text-light col-sm-6">{{ plan[2] }}</p>
+                </div>
+                <div class="row">
+                    <strong class="text-success col-sm-6">Recommended Payment:</strong>
+                    <p class="text-success col-sm-6">{{ plan[3] }}</p>
+                </div>
+            </div>
+        <br>
+            <div class="container border py-3 col">
+                <h3 class="text-light">Goals</h3>
+                <div class="row">
+                    <strong class="text-light col-sm-6">75%:</strong>
+                    <p class="text-light col-sm-6">{{ target[0] }}</p>
+                </div>
+                <div class="row">
+                    <strong class="text-light col-sm-6">49%:</strong>
+                    <p class="text-light col-sm-6">{{ target[1] }}</p>
+                </div>
+                <div class="row">
+                    <strong class="text-light col-sm-6">29%:</strong>
+                    <p class="text-light col-sm-6">{{ target[2] }}</p>
+                </div>
+                <div class="row">
+                    <strong class="text-light col-sm-6">9%:</strong>
+                    <p class="text-light col-sm-6">{{ target[3] }}</p>
+                </div>
+            </div>
+        <br>
+            <button type="button" class="btn btn-primary"><a href="#" class="text-light link-underline link-underline-opacity-0">Update</a></button>
+            <button type="button" class="btn btn-secondary mx-2"><a href="{{ url_for('index') }}" class="text-light link-underline link-underline-opacity-0">Home</a></button>
+
+    </div>
+{% endblock %}

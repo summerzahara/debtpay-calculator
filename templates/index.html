@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Credit Card Utilization{% endblock %}
+{% block content %}
+    <div class="container py-5">
+		<h1 class="text-light">My Cards</h1>
+            <div class="container border py-3 col-sm-12">
+                {% if count == 0 %}
+                    <div class="row">
+                        <p class="text-light col-sm-6">No Cards Added.</p>
+                    </div>
+                {% endif %}
+                {% for card in cards %}
+                    <div class="row align-middle">
+                        <strong class="text-light col-3">Card Name:</strong>
+                        <p class="text-light col-3">{{ card.card_name }}</p>
+                        <button type="button" class="btn btn-primary col m-2"><a href="{{ url_for('payment_plan', card_id=card.id) }}" class="text-light link-underline link-underline-opacity-0">View</a></button>
+                        <button type="button" class="btn btn-secondary col m-2"><a href="#" class="text-light link-underline link-underline-opacity-0">Update</a></button>
+                    </div>
+                {% endfor %}
+            </div>
+        <br>
+        <button type="button" class="btn btn-primary"><a href="{{ url_for('add_card') }}" class="text-light link-underline link-underline-opacity-0">Add Card</a></button>
+    </div>
+{% endblock %}

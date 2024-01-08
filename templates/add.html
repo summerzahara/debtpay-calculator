@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+{% block title %}Credit Card Utilization{% endblock %}
+{% block content %}
+    <div class="container py-5 text-light">
+		<h1 class="text-light">Add Credit Card Details</h1>
+            {{ render_form(form) }}
+        <button type="button" class="btn btn-secondary my-2"><a href="{{ url_for('index') }}" class="text-light link-underline link-underline-opacity-0">Home</a></button>
+        </div>
+
+{% endblock %}
